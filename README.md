@@ -1,2 +1,2 @@
 # singolo
-https://sklevzhic.github.io/singolo1/
+https://sklevzhic.github.io/singolo/singolo1.html
