@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #767e9e;
+    font-family: 'Lato', sans-serif;
+    cursor: default;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 1020px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.singalo__title {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.singalo__portfolio {
+    background: #2d303a;
+    color: #666d89;
+    padding-top: 60px;
+}
+
+.portfolio__description {
+    margin-top: 10px;
+}
+
+.singalo__portfolio > .container {
+    padding: 0 38px;
+}
+
+.portfolio__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.portfolio__item {
+    margin: 0;
+    padding: 0;
+    width: 220px;
+    height: 187px;
+}
+
+.portfolio__filter {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.portfolio__filter {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.filter__item {
+    margin: 0;
+    padding: 0;
+}
+
+.team__items {
+    display: flex;
+}
+
+.team__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.team__links {
+    display: flex;
+}
