@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<header class="singolo__header">
+<header class="singolo__header" id="header">
     <div class="container">
         <a href="#" class="singolo__logo"><h1>SINGOLO</h1></a>
         <nav class="singolo__nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a class="nav__link" href="#">HOME</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">SERVICES</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">PORTFOLIO</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">ABOUT</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">CONTACT</a></li>
+            <ul class="nav__list" id='main-menu'>
+                <li class="nav__item"><a class="nav__link nav__link--active" href="#header">HOME</a></li>
+                <li class="nav__item"><a class="nav__link" href="#services">SERVICES</a></li>
+                <li class="nav__item"><a class="nav__link" href="#portfolio">PORTFOLIO</a></li>
+                <li class="nav__item"><a class="nav__link" href="#team">ABOUT</a></li>
+                <li class="nav__item"><a class="nav__link" href="#feedack">CONTACT</a></li>
             </ul>
         </nav>
     </div>
@@ -28,16 +28,27 @@
     <div class="container">
         <ul class="slider__list">
             <li class="slider__item">
-                <img class="slider__img slider__img--left" src="./assets/img/iPhoneVertical.png" alt="">
-                <img class="slider__img slider__img--right" src="./assets/img/iPhoneHorizontal.png" alt="">
+                <span class="img-wrapper">
+                    <img class="slider__img slider__img--left" src="./assets/img/iPhoneVertical.png" alt="">
+                    <span class="lcd__phone lcd__phone--left"></span>
+                    <button class="btn__phone btn__phone--left"></button>
+                </span>
+                <span class="img-wrapper">
+                    <img class="slider__img slider__img--right" src="./assets/img/iPhoneHorizontal.png" alt="">
+                    <span class="lcd__phone lcd__phone--right"></span>
+                    <button class="btn__phone  btn__phone--right"></button>
+                </span>
+                
             </li>
-
+            <li class="slider__item">
+                <img class="slider__img slider__img--left" src="./assets/img/slide2.png" alt="">
+            </li>
         </ul>
         <a href="#" class="slider__control slider__control--left"><img src="./assets/img/icons/btn-left.png" alt=""></a>
         <a href="#" class="slider__control slider__control--right"><img src="./assets/img/icons/btn-right.png" alt=""></a>
     </div>
 </section>
-<section class="singolo__services">
+<section class="singolo__services" id='services'>
     <div class="container">
         <h2 class="services__title singalo__title"> Our Services</h2>
         <p class="services__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -87,74 +98,74 @@
         </ul>
     </div>
 </section>
-<section class="singalo__portfolio">
+<section class="singalo__portfolio" id="portfolio">
     <div class="container">
         <h2 class="portfolio__title singalo__title">Portfolio</h2>
         <p class="portfolio__description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
         <ul class="portfolio__filter filter__items">
-            <li class="filter__item"><a class="filter__link filter__link--active" href="#">All</a></li>
-            <li class="filter__item"><a class="filter__link" href="#">Web Design</a></li>
-            <li class="filter__item"><a class="filter__link" href="#">Graphic Design</a></li>
-            <li class="filter__item"><a class="filter__link" href="#">Artwork</a></li>
+            <li class="filter__item"><a class="filter__link filter__link--active" onclick="filterSelection('all')">All</a></li>
+            <li class="filter__item"><a class="filter__link" onclick="filterSelection('portfolio__item-web')">Web Design</a></li>
+            <li class="filter__item"><a class="filter__link" onclick="filterSelection('portfolio__item-graphic')">Graphic Design</a></li>
+            <li class="filter__item"><a class="filter__link" onclick="filterSelection('portfolio__item-artwork')">Artwork</a></li>
         </ul>
         <ul class="portfolio__items">
-            <li class="portfolio__item">
-                <a class="portfolio__link" href="#">
+            <li class="portfolio__item portfolio__item-artwork">
+                <a class="portfolio__link">
                     <img class="portfolio__img" src="assets/img/potrfolio/Project-1.png" alt="">
                 </a>
             </li>
-            <li class="portfolio__item">
-                <a class="portfolio__link" href="#">
+            <li class="portfolio__item portfolio__item-graphic">
+                <a class="portfolio__link">
                     <img class="portfolio__img" src="assets/img/potrfolio/Project-2.png" alt="">
                 </a>
             </li>
-            <li class="portfolio__item">
-                <a class="portfolio__link" href="#">
+            <li class="portfolio__item portfolio__item-graphic">
+                <a class="portfolio__link">
                     <img class="portfolio__img" src="assets/img/potrfolio/Project-3.png" alt="">
                 </a>
             </li>
-            <li class="portfolio__item">
-                <a class="portfolio__link" href="#">
+            <li class="portfolio__item portfolio__item-graphic">
+                <a class="portfolio__link">
                     <img class="portfolio__img" src="assets/img/potrfolio/Project-4.png" alt="">
                 </a>
             </li>
-            <li class="portfolio__item">
-                <a class="portfolio__link" href="#">
+            <li class="portfolio__item portfolio__item-artwork">
+                <a class="portfolio__link">
                     <img class="portfolio__img" src="assets/img/potrfolio/Project-5.png" alt="">
                 </a>
             </li>
-            <li class="portfolio__item">
-                <a class="portfolio__link" href="#">
+            <li class="portfolio__item portfolio__item-web">
+                <a class="portfolio__link">
                     <img class="portfolio__img" src="assets/img/potrfolio/Project-6.png" alt="">
                 </a>
             </li>
-            <li class="portfolio__item">
-                <a class="portfolio__link" href="#">
+            <li class="portfolio__item portfolio__item-artwork">
+                <a class="portfolio__link">
                     <img class="portfolio__img" src="assets/img/potrfolio/Project-7.png" alt="">
                 </a>
             </li>
-            <li class="portfolio__item">
-                <a class="portfolio__link" href="#">
+            <li class="portfolio__item portfolio__item-web">
+                <a class="portfolio__link">
                     <img class="portfolio__img" src="assets/img/potrfolio/Project-8.png" alt="">
                 </a>
             </li>
-            <li class="portfolio__item">
-                <a class="portfolio__link" href="#">
+            <li class="portfolio__item portfolio__item-artwork">
+                <a class="portfolio__link">
                     <img class="portfolio__img" src="assets/img/potrfolio/Project-9.png" alt="">
                 </a>
             </li>
-            <li class="portfolio__item">
-                <a class="portfolio__link" href="#">
+            <li class="portfolio__item portfolio__item-web">
+                <a class="portfolio__link">
                     <img class="portfolio__img" src="assets/img/potrfolio/Project-10.png" alt="">
                 </a>
             </li>
-            <li class="portfolio__item">
-                <a class="portfolio__link" href="#">
+            <li class="portfolio__item portfolio__item-artwork">
+                <a class="portfolio__link">
                     <img class="portfolio__img" src="assets/img/potrfolio/Project-11.png" alt="">
                 </a>
             </li>
-            <li class="portfolio__item">
-                <a class="portfolio__link" href="#">
+            <li class="portfolio__item portfolio__item-web">
+                <a class="portfolio__link">
                     <img class="portfolio__img" src="assets/img/potrfolio/Project-12.png" alt="">
                 </a>
             </li>
@@ -163,7 +174,7 @@
 
     </div>
 </section>
-<section class="singalo__team">
+<section class="singalo__team" id="team">
     <div class="container">
         <h2 class="team__title singalo__title">About Us</h2>
         <p class="team__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -205,15 +216,15 @@
 
     </div>
 </section>
-<section class="feedack">
+<section class="feedack" id="feedack">
     <div class="container">
         <h3 class="feedack__title">Get a Quote</h3>
         <p class="feedack__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
         <div class="feedback__columns">
             <div class="left-column">
                 <form class="feedback__form" action="URL" method="get">
-                    <input type="text" class="feedback__form-element" placeholder="Name (Required)" required="" pattern="[A-Z][A-Za-z]+">
-                    <input type="text" class="feedback__form-element" placeholder="Email (Required)" required="">
+                    <input class="feedback__form-element" type="text" name="Name" placeholder="Name (Required)" required="">
+                    <input type="text" class="feedback__form-element" type="email" name="Email" placeholder="Email (Required)" required="">
                     <input type="text" class="feedback__form-element" placeholder="Subject">
                     <textarea name="text" class="feedback__form-element" placeholder="Describe your project in detail..."></textarea>
                     <input type="submit" class="feedback__button" value="Send">
@@ -233,7 +244,7 @@
         </div>
     </div>
 </section>
-<footer class="singalo__footer">
+<footer class="singalo__footer" id="footer">
     <div class="container">
         <p class="copyright__text">© Copyright 2013 ∙ by PSDchat.comq</p>
         <ul class="copyright__social social__list">
@@ -245,5 +256,14 @@
     </div>
 </footer>
 
+<div class="modal">
+<button class="close">X</button>
+<div class="modalwrapper">
+
+</div>
+    
+</div>
+
+<script src="./script.js"></script>
 </body>
 </html>
