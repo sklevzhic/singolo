@@ -35,6 +35,11 @@ body {
     align-items: center;
     padding: 29px 0px 30px 39px;
     justify-content: space-between;
+    transition: transform 1s;
+}
+
+.singolo__header > .container:hover {
+    padding: 5px 0px 10px 39px;
 }
 
 .nav__list {
@@ -177,7 +182,7 @@ body {
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     display: block;
     padding: 18px;
-    z-index: 5;
+    z-index: 1;
 }
 
 .slider__control img:hover {
