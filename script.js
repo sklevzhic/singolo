@@ -37,22 +37,22 @@ function activeMenu(el) {
 let formSubmit = document.querySelector('.feedback__button');
 let modal = document.querySelector('.modal');
 let modalWrapper = document.querySelector('.modalwrapper')
-let modalClose = document.querySelector('.close');
+let modalClose = document.querySelectorAll('.close');
+let form = document.querySelector('form');
 
-
-formSubmit.addEventListener('click', function(e) {
+form.addEventListener('submit', function(e) {
     e.preventDefault();
 
 
-    let form = document.querySelector('form');
+    
     let newArr = [];
     let formArr = form.querySelectorAll('.feedback__form-element').forEach(el => newArr.push(el.value));
 
         modal.style.display = "block"
-        if (newArr[2] !== 'Singalo') {
+        if (newArr[2] == '') {
             newArr[2] = 'Без темы'
         } 
-        if (newArr[3] !== 'Portfolio project') {
+        if (newArr[3] == '') {
             newArr[3] = 'Без темы'
         } 
     
@@ -60,14 +60,19 @@ formSubmit.addEventListener('click', function(e) {
         <p> <b>Письмо отправлено</b></p>  
         <p><b>Тема: </b>${newArr[1]}</p>  
         <p> <b>Описание: </b>${newArr[2]}</p  
-        <p>${newArr[3]}</p>`
+        <p>${newArr[3]}</p>
+        `
 
-        document.getElementById('feedback__form').reset();
+        document.querySelector('.feedback__form').reset();
 })
 
-modalClose.addEventListener('click', function(e) {
+modalClose.forEach(el => {
+  el.addEventListener('click', function(e) {
     modal.style.display = "none"
 })
+})
+
+
 
 // Выключение экрана
 
@@ -208,11 +213,8 @@ slide(slider, sliderItems, prev, next);
 let portfolio = document.querySelector('.portfolio__items');
 
 let portfolioItems = document.querySelector('.portfolio__items');
-let portfolioItemImg = document.querySelectorAll('.portfolio__items li a img');
 let filterButtons = document.querySelector('.filter__items');
 let btns = filterButtons.querySelectorAll('li a');
-
-
 
 btns.forEach(el => {
   el.addEventListener('click', function(e) {
@@ -224,6 +226,7 @@ btns.forEach(el => {
 
 
 portfolioItems.addEventListener('click', function(e) {
+  let portfolioItemImg = document.querySelectorAll('.portfolio__items li a img');
   portfolioItemImg.forEach(el => {
     el.classList.remove('portfolio__img--border');
     e.target.classList.add('portfolio__img--border');

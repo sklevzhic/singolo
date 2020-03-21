@@ -864,6 +864,19 @@ textarea {
     position: absolute;
     right: 0;
     top: 0;
+    background: red;
+}
+
+.button-ok {
+    position: relative;
+    font-size: 12px;
+    margin-left: calc(50% - 40px);
+    margin-top: -1px;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    color: white;
+    background: #d6564f;
+    cursor: pointer;
 }
 
 .portfolio__img.portfolio__img--border {
