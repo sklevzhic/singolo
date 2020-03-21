@@ -30,10 +30,9 @@ function activeMenu(el) {
       })
     }
   })
-
 }
 
-
+// Форма
 
 let formSubmit = document.querySelector('.feedback__button');
 let modal = document.querySelector('.modal');
@@ -50,7 +49,7 @@ formSubmit.addEventListener('click', function(e) {
     let formArr = form.querySelectorAll('.feedback__form-element').forEach(el => newArr.push(el.value));
 
         modal.style.display = "block"
-        if (newArr[2] !== 'Singolo') {
+        if (newArr[2] !== 'Singalo') {
             newArr[2] = 'Без темы'
         } 
         if (newArr[3] !== 'Portfolio project') {
@@ -62,6 +61,8 @@ formSubmit.addEventListener('click', function(e) {
         <p><b>Тема: </b>${newArr[1]}</p>  
         <p> <b>Описание: </b>${newArr[2]}</p  
         <p>${newArr[3]}</p>`
+
+        document.getElementById('feedback__form').reset();
 })
 
 modalClose.addEventListener('click', function(e) {
@@ -82,14 +83,14 @@ btnRightPhone.addEventListener('click', function() {
 
 
 
-// slider
-var slider = document.getElementById('slider'),
+// Слайдер
+let slider = document.getElementById('slider'),
     sliderItems = document.getElementById('slides'),
     prev = document.querySelector('.slider__control--left'),
     next = document.querySelector('.slider__control--right');
 
 function slide(wrapper, items, prev, next) {
-  var posX1 = 0,
+  let posX1 = 0,
       posX2 = 0,
       posInitial,
       posFinal,
@@ -202,70 +203,47 @@ function slide(wrapper, items, prev, next) {
 
 slide(slider, sliderItems, prev, next);
 
-
-// portfolioactive
-
-
-
-
-// portfolio
-filterSelection("all")
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("portfolio__item");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
-
-// Show filtered elements
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
-    }
-  }
-}
-
-// Hide elements that are not selected
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
-  }
-  element.className = arr1.join(" ");
-}
-
-// Add active class to the current button (highlight it)
-var btnContainer = document.querySelector('.filter__items');
-var btns = btnContainer.querySelectorAll('li a');
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(e){
-      e.preventDefault();
-    var current = document.getElementsByClassName("filter__link--active");
-    current[0].className = current[0].className.replace(" filter__link--active", "");
-    this.className += " filter__link--active";
-  });
-}
-
+// Портфолио
 
 let portfolio = document.querySelector('.portfolio__items');
 
-portfolio.addEventListener('click', function(e) {
-    let portfolioItems = portfolio.querySelectorAll('li a img')
-    portfolioItems.forEach(el => {
-        el.classList.remove('portfolio__img--border');
-        e.target.classList.add('portfolio__img--border');
-        
-    });
+let portfolioItems = document.querySelector('.portfolio__items');
+let portfolioItemImg = document.querySelectorAll('.portfolio__items li a img');
+let filterButtons = document.querySelector('.filter__items');
+let btns = filterButtons.querySelectorAll('li a');
+
+
+
+btns.forEach(el => {
+  el.addEventListener('click', function(e) {
+    let current = document.getElementsByClassName("filter__link--active");
+    current[0].className = current[0].className.replace(" filter__link--active", "");
+    this.className += " filter__link--active";
+  })
 })
+
+
+portfolioItems.addEventListener('click', function(e) {
+  portfolioItemImg.forEach(el => {
+    el.classList.remove('portfolio__img--border');
+    e.target.classList.add('portfolio__img--border');
+  })
+})
+
+
+filterButtons.addEventListener('click', mixArray);
+
+function mixArray() {
+  let portfolioItem = Array.from(document.querySelectorAll('.portfolio__item'));
+  let newPortfolio = '';
+  let arrElements = Array.from({length: portfolioItem.length}, (v, k) => k);
+  let randowArrElements = arrElements.sort(function(){
+    return Math.random() - 0.5;
+  });
+  randowArrElements.forEach((el,i) => {
+    newPortfolio += portfolioItem[el].outerHTML;
+  });
+  portfolio.innerHTML = newPortfolio;
+}
+
 

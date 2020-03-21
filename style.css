@@ -38,10 +38,6 @@ body {
     transition: transform 1s;
 }
 
-.singolo__header > .container:hover {
-    padding: 5px 0px 10px 39px;
-}
-
 .nav__list {
     display: flex;
     list-style: none;
@@ -366,9 +362,6 @@ body {
 
 /*2*/
 
-
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
-
 .singalo__portfolio > .container {
     padding: 0 38px;
 }
@@ -442,8 +435,10 @@ body {
     width: 220px;
     height: 187px;
     margin-bottom: 20px;
-    display: none;
+    /* display: none; */
 }
+
+
 .show {
     display: block;
   }
@@ -465,6 +460,8 @@ body {
     opacity: 1.0;
     transform: scale(1.02);
 }
+
+.filter__link--active
 
 .portfolio__title {
     margin-left: 1px;
