@@ -1036,4 +1036,89 @@ textarea {
     .nav__list {
         margin-top: 1px;
     }
+
+    .slider__control {
+        top: 169px;
+    }
+}
+
+
+@media (max-width: 660px) {
+
+    .slider__item {
+        height: 371px;
+    }
+
+    .slider__item .container {
+        width: 510px;
+    }
+
+    .slider__img--left {
+        height: 299px;
+    }
+
+    .slider__img--right {
+        width: 299px;
+    }
+
+    .nav__list {
+        display: none;
+    }
+
+    .singolo__header > .container {
+        padding: 22px 0px 19px 39px;
+    }
+
+    .slider__control {
+        top: 140px;
+    }
+
+    .slider__control--left {
+        left: 0px;
+    }
+
+    .slider__control--right {
+        right: 0px;
+    }
+
+    .singolo__logo h1 {
+        font-size: 20px;
+    }
+
+}
+
+
+
+@media (max-width: 546px) {
+
+    .slider__item {
+        height: 300px;
+    }
+
+    .slider__item .container {
+        width: 359px;
+    }
+
+    .slider__img--left {
+        height: 175px;
+    }
+
+    .slider__img--right {
+        width: 175px;
+    }
+
+    .slider__control {
+        top: 120px;
+    }
+}
+
+@media (max-width: 414px) {
+.slider__item {
+    height: 221px;
+}
+
+.slider__control {
+    top: 72px;
+}
+
 }
