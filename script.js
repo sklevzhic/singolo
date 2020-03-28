@@ -169,3 +169,11 @@ function mixArray() {
 }
 
 
+let hamburger = document.querySelector('.hamburgerrr');
+let mobileMenu = document.querySelector('.nav__list');
+
+hamburger.addEventListener('click', function() {
+  mobileMenu.classList.toggle('menu-show');
+  hamburger.classList.toggle('hamburgerrr-rotate')
+})
+
