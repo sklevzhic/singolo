@@ -16,6 +16,15 @@ function activeMenu(el) {
     document.querySelector('.singolo__header > .container').style.padding = "29px 0px 30px 39px"
   }
 
+  if (curHeight >= heightHeader) {
+    document.querySelector('.hamburgerrr').style.top = "11px";
+  }
+
+  if (curHeight <= heightHeader) {
+    document.querySelector('.hamburgerrr').style.top = "27px";
+
+  }
+
   sections.forEach((el) => {
     if (curHeight < heightSlider) {
       menuItems[0].classList.add('nav__link--active');
@@ -173,6 +182,12 @@ let hamburger = document.querySelector('.hamburgerrr');
 let mobileMenu = document.querySelector('.nav__list');
 
 hamburger.addEventListener('click', function() {
+  mobileMenu.classList.toggle('menu-show');
+  hamburger.classList.toggle('hamburgerrr-rotate')
+})
+
+document.querySelector('.nav__list').addEventListener('click', function(e) {
+  // console.log(e.target);
   mobileMenu.classList.toggle('menu-show');
   hamburger.classList.toggle('hamburgerrr-rotate')
 })

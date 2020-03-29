@@ -1153,6 +1153,11 @@ textarea {
         justify-content: space-around;
     }
 
+    .modal {
+        width: 80vw;
+        left: calc(50% - 40vw);
+    }
+
 
 }
 
@@ -1447,4 +1452,14 @@ textarea {
     width: 150px;
 }
 
+}
+
+@media (max-width: 365px) {
+    .filter__link {
+        font-size: 9px;
+    }
+
+    .portfolio__item {
+        width: 126px;
+    }
 }
